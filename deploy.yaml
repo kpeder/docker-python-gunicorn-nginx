@@ -3,16 +3,15 @@
   kind: Deployment
   metadata:
     name: metadata-api
-    spec:
-      replicas: 2
-      containers:
-        template:
-          metadata:
-            labels:
-              app: metadata-api
-          spec:
-            containers:
-              - name: nginx-gunicorn
-                image: pydevswarmregistry.azurecr.io/python-gunicorn-nginx:latest
-                ports:
-                  - containerPort: 80
+  spec:
+    replicas: 2
+    template:
+      metadata:
+        labels:
+          app: metadata-api
+      spec:
+        containers:
+            - name: nginx-gunicorn
+              image: pydevswarmregistry.azurecr.io/python-gunicorn-nginx:latest
+              ports:
+                - containerPort: 80
