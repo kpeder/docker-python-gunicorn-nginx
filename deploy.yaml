@@ -5,4 +5,6 @@ metadata:
 spec:
   containers:
   - name: nginx-gunicorn
-    image: pydevswarmregistry.azurecr.io/nginx-gunicorn:latest
+    image: pydevswarmregistry.azurecr.io/python-gunicorn-nginx:latest
+    ports:
+      - containerPort: 80
