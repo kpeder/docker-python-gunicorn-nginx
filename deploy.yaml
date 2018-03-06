@@ -1,0 +1,8 @@
+ApiVersion: v1
+kind: Pod
+metadata:
+  name: metadata-api
+spec:
+  containers:
+  - name: nginx-gunicorn
+    image: pydevswarmregistry.azurecr.io/nginx-gunicorn:latest

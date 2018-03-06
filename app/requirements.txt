@@ -1,0 +1,5 @@
+connexion
+flask
+flask-injector
+google-cloud-datastore
+pytest
