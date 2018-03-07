@@ -1,8 +1,5 @@
 # Docker Image : python-gunicorn-nginx
 
-[![Build Status](https://travis-ci.org/matthieugouel/docker-python-gunicorn-nginx.svg?branch=master)](https://travis-ci.org/matthieugouel/docker-python-gunicorn-nginx)
-[![Docker Build Status](https://img.shields.io/docker/build/matthieugouel/python-gunicorn-nginx.svg)](https://hub.docker.com/r/matthieugouel/python-gunicorn-nginx)
-[![Docker Automated build](https://img.shields.io/docker/automated/matthieugouel/python-gunicorn-nginx.svg)](https://github.com/matthieugouel/docker-python-gunicorn-nginx)
 [![license](https://img.shields.io/github/license/matthieugouel/docker-python-gunicorn-nginx.svg)](https://github.com/matthieugouel/docker-python-gunicorn-nginx/blob/master/LICENSE)
 
 
@@ -52,4 +49,11 @@ And finally access it with curl for instance :
 
 ```
 curl localhost:8000
+```
+## Kubectl deployment
+
+The deploy.yaml file creates a new deployment from image in Kubernetes like this :
+
+```
+kubectl create -f deploy.yaml
 ```
