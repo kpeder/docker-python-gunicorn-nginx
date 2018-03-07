@@ -1,22 +1,22 @@
-----
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: metadata-api
-    labels:
-      app: metadata-api
-  spec:
-    replicas: 2
-    selector:
-      matchLabels:
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: metadata-api
+  labels:
+    app: metadata-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-gunicorn
+  template:
+    metadata:
+      labels:
         app: nginx-gunicorn
-    template:
-      metadata:
-        labels:
-          app: nginx-gunicorn
-      spec:
-        containers:
-          - name: nginx-gunicorn
-            image: pydevswarmregistry.azurecr.io/python-gunicorn-nginx:latest
-            ports:
-              - containerPort: 80
+    spec:
+      containers:
+        - name: nginx-gunicorn
+          image: pydevswarmregistry.azurecr.io/python-gunicorn-nginx:latest
+          ports:
+            - containerPort: 80
