@@ -50,10 +50,15 @@ And finally access it with curl for instance :
 ```
 curl localhost:8000
 ```
-## Kubectl deployment
+## Kubectl / Minikube deployment
+
+The deployment is designed to use an nginx-ingress controller; for example, to run the Azure ingress deployment :
+```
+kubectl apply -f azurerm_ingress.yaml
+```
 
 The deploy.yaml file creates a new deployment from image in Kubernetes like this :
 
 ```
-kubectl create -f deploy.yaml
+kubectl apply -f deploy.yaml
 ```
