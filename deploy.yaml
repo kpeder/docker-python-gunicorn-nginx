@@ -24,7 +24,8 @@ spec:
         - name: nginx-gunicorn
           image: pydevswarmregistry.azurecr.io/python-gunicorn-nginx:latest
           ports:
-            - containerPort: 80
+            - name: http
+              containerPort: 80
 
 ---
 apiVersion: v1
@@ -35,9 +36,9 @@ metadata:
     app: metadata-api
 spec:
   ports:
-    - name: "http"
+    - name: http
       port: 80
-      targetPort: 80
+      targetPort: http
   selector:
     app: nginx-gunicorn
 
@@ -59,4 +60,4 @@ spec:
           - path: /metadata
             backend:
               serviceName: metadata-api
-              servicePort: 80
+              servicePort: http
