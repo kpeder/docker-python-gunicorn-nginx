@@ -57,7 +57,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /metadata
+          - path: /metadata/
             backend:
               serviceName: metadata-api
               servicePort: http
