@@ -22,6 +22,7 @@ spec:
     spec:
       containers:
         - name: nginx-gunicorn
+          #replace with path to application container
           image: pydevswarmregistry.azurecr.io/python-gunicorn-nginx:latest
           ports:
             - name: http
