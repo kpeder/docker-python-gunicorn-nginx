@@ -137,6 +137,12 @@ apiVersion: v1
 metadata:
   name: ingress-nginx
   namespace: ingress-nginx
+#if kubernetes is deployed in association with a custom subnet
+#then uncomment the annotation to deploy the endpoint internally
+#and update the AKS subnet routing table to return traffic to
+#the internal vnet
+#  annotations:
+#    service.beta.kubernetes.io/azure-load-balancer-internal: true
   labels:
     app: ingress-nginx
 spec:
