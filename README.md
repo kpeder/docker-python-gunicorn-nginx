@@ -54,7 +54,8 @@ curl localhost:8000
 
 Usually, you'll want your image pushed to a registry for deployment. Use :
 
-```docker login [Container.Registry.URI]
+```
+docker login [Container.Registry.URI]
 docker tag prod_api [Container.Registry.URI/]imagename:tag
 docker push [Container.Registry.URI/]imagename:tag
 ```
