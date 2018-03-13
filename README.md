@@ -62,3 +62,11 @@ The deploy.yaml file creates a new deployment from image in Kubernetes like this
 ```
 kubectl apply -f deploy.yaml
 ```
+## Google Kubernetes Engine (GKE) requirements
+
+Before performing the deployment you must grant your user the ability to create authorization roles :
+```
+kubectl create clusterrolebinding cluster-admin-binding \
+--clusterrole cluster-admin --user $(gcloud config get-value account)
+```
+For reference, see [Kubernetes Engine > Role-Based Access Control > Prerequisites for using Role-Based Access Control](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control#prerequisites_for_using_role-based_access_control).
