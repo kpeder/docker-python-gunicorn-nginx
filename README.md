@@ -50,6 +50,15 @@ And finally access it with curl for instance :
 ```
 curl localhost:8000
 ```
+## Tag and Push to a Registry
+
+Usually, you'll want your image pushed to a registry for deployment. Use :
+
+```docker login [Container.Registry.URI]
+docker tag prod_api [Container.Registry.URI/]imagename:tag
+docker push [Container.Registry.URI/]imagename:tag
+```
+
 ## Kubectl / Azure Kubernetes Service (AKS) deployment
 
 The deployment is designed to use an nginx-ingress controller; for example, to run the Azure ingress deployment :
